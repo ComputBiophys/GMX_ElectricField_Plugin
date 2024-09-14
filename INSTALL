@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# run this to include this plugin into the source file before building gromacs
+# change this to the folder of gromacs source file
+gromacs="../"
+
+cp electricfield.cpp ${gromacs}/src/gromacs/applied_forces/electricfield.cpp
+cp electricfield_test.cpp ${gromacs}/src/gromacs/applied_forces/tests/electricfield.cpp
+
+echo "Plugin added to gromacs source file. Now you can build gromacs with this plugin."
+
