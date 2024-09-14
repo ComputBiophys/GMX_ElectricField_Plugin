@@ -1,0 +1,44 @@
+;
+;	File 'topol.top' was generated
+;	By user: szg (1001)
+;	On host: luofan-All-Series
+;	At date: Thu Apr 20 19:04:17 2023
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	                     :-) GROMACS - gmx pdb2gmx, 2023 (-:
+;	
+;	Executable:   /home/szg/gromacs/bin/gmx
+;	Data prefix:  /home/szg/gromacs
+;	Working dir:  /home/szg/gromacs-2023-modified/test
+;	Command line:
+;	  gmx pdb2gmx -f ions.gro -o system.gro
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "forcefield/forcefield.itp"
+
+; Include water topology
+#include "forcefield/tip3p.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "forcefield/ions.itp"
+
+[ system ]
+; Name
+test for plugin
+
+[ molecules ]
+; Compound        #mols
+POT                 2
+CLA	 	    2
+SOL               879

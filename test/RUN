@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# run the test for this plugin
+
+# change this to the gromacs path that is built with this plugin 
+source /usr/local/gromacs/bin/GMXRC
+
+
+gmx grompp -f test1.mdp -c solution.gro -p topol.top -o test1.tpr
+gmx mdrun -v -deffnm test1
+
+gmx grompp -f test2.mdp -c solution.gro -p topol.top -o test2.tpr
+gmx mdrun -v -deffnm test2
+
