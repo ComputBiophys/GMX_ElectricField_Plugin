@@ -390,7 +390,7 @@ void ElectricField::calculateForces(const ForceProviderInput& forceProviderInput
                 }
             }
         }
-        if (MAIN(&cr) && fpField_ != nullptr)
+        if (MASTER(&cr) && fpField_ != nullptr)
         {
             printComponents(t);
         }
